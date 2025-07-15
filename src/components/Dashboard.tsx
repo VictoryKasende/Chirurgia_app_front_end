@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Heart, Activity, Users, Clock, TrendingUp, AlertTriangle } from 'lucide-react';
 
 interface DashboardStats {
@@ -8,7 +8,7 @@ interface DashboardStats {
   successRate: number;
 }
 
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
   const [stats, setStats] = useState<DashboardStats>({
     totalPredictions: 0,
     highRiskPatients: 0,

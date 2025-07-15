@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Heart, AlertCircle, CheckCircle, Clock } from 'lucide-react';
 import { chirurgiaApi } from '../services/api';
 import type { Biomarkers, ClinicalTexts, MortalityPredictionResponse, MortalitySimpleResponse } from '../types/api';
 
-const MortalityPrediction: React.FC = () => {
+const MortalityPrediction = () => {
   const [analysisType, setAnalysisType] = useState<'simple' | 'complete'>('simple');
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<MortalityPredictionResponse | MortalitySimpleResponse | null>(null);

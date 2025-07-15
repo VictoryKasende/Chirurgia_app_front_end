@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Activity, Heart, Users, Clock, AlertCircle, CheckCircle, Brain } from 'lucide-react';
 import { chirurgiaApi } from '../services/api';
 import type { Biomarkers, ClinicalTexts, CompleteAnalysisResponse } from '../types/api';
 
-const CompleteAnalysis: React.FC = () => {
+const CompleteAnalysis = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<CompleteAnalysisResponse | null>(null);
   const [error, setError] = useState<string | null>(null);

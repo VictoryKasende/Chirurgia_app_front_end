@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Users, Clock, AlertCircle, TrendingUp, Shield, Eye } from 'lucide-react';
 import { chirurgiaApi } from '../services/api';
 import type { Biomarkers, ClinicalTexts, ClusteringResponse } from '../types/api';
 
-const ClusteringAnalysis: React.FC = () => {
+const ClusteringAnalysis = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<ClusteringResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -301,9 +301,10 @@ const ClusteringAnalysis: React.FC = () => {
               {/* Monitoring Level */}
               <div className="card">
                 <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center">
-                  {React.createElement(getMonitoringIcon(result.monitoring_level), { 
-                    className: "h-5 w-5 mr-2 text-purple-500" 
-                  })}
+                  {(() => {
+                    const MonitoringIcon = getMonitoringIcon(result.monitoring_level);
+                    return <MonitoringIcon className="h-5 w-5 mr-2 text-purple-500" />;
+                  })()}
                   Surveillance
                 </h3>
                 

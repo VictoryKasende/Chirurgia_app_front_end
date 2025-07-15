@@ -1,4 +1,3 @@
-import React from 'react';
 import { Activity, Heart, Users, BarChart3 } from 'lucide-react';
 
 interface HeaderProps {
@@ -6,7 +5,7 @@ interface HeaderProps {
   onPageChange: (page: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => {
+const Header = ({ currentPage, onPageChange }: HeaderProps) => {
   const navItems = [
     { id: 'dashboard', label: 'Tableau de bord', icon: BarChart3 },
     { id: 'mortality', label: 'Prédiction Mortalité', icon: Heart },
