@@ -94,14 +94,14 @@ const ClusteringAnalysis = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Header */}
       <div className="text-center">
         <div className="flex items-center justify-center mb-4">
-          <Users className="h-8 w-8 text-medical-600 mr-3" />
-          <h1 className="text-3xl font-bold text-gray-900">Analyse de Clustering</h1>
+          <Users className="h-6 w-6 md:h-8 md:w-8 text-blue-600 mr-3" />
+          <h1 className="text-xl md:text-3xl font-bold text-gray-900">Analyse de Clustering</h1>
         </div>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
           Classification intelligente des patients survivants pour optimiser la surveillance et personnaliser les soins
         </p>
       </div>
@@ -109,55 +109,55 @@ const ClusteringAnalysis = () => {
       {/* Sélection des données de test */}
       <div className="card bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200">
         <div className="flex items-center mb-4">
-          <TrendingUp className="h-5 w-5 text-blue-600 mr-2" />
-          <h3 className="text-lg font-semibold text-blue-900">Données de test disponibles</h3>
+          <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-blue-600 mr-2" />
+          <h3 className="text-base md:text-lg font-semibold text-blue-900">Données de test disponibles</h3>
         </div>
-        <p className="text-sm text-blue-700 mb-4">
+        <p className="text-xs md:text-sm text-blue-700 mb-4">
           Sélectionnez un profil de patient pour pré-remplir les formulaires avec des données réalistes
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3">
           <button
             onClick={() => loadPatientData('criticalPatient')}
-            className="px-4 py-3 bg-gradient-to-r from-red-100 to-red-200 text-red-800 rounded-lg font-medium hover:from-red-200 hover:to-red-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-3 py-2 md:px-4 md:py-3 bg-gradient-to-r from-red-100 to-red-200 text-red-800 rounded-lg font-medium hover:from-red-200 hover:to-red-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-1 md:space-x-2"
           >
-            <AlertTriangle className="h-4 w-4" />
-            <span>Patient Critique</span>
+            <AlertTriangle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
+            <span className="text-xs md:text-sm">Patient Critique</span>
           </button>
           <button
             onClick={() => loadPatientData('stablePatient')}
-            className="px-4 py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-800 rounded-lg font-medium hover:from-green-200 hover:to-green-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-3 py-2 md:px-4 md:py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-800 rounded-lg font-medium hover:from-green-200 hover:to-green-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-1 md:space-x-2"
           >
-            <CheckCircle2 className="h-4 w-4" />
-            <span>Patient Stable</span>
+            <CheckCircle2 className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
+            <span className="text-xs md:text-sm">Patient Stable</span>
           </button>
           <button
             onClick={() => loadPatientData('septicShockPatient')}
-            className="px-4 py-3 bg-gradient-to-r from-red-100 to-red-200 text-red-800 rounded-lg font-medium hover:from-red-200 hover:to-red-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-3 py-2 md:px-4 md:py-3 bg-gradient-to-r from-red-100 to-red-200 text-red-800 rounded-lg font-medium hover:from-red-200 hover:to-red-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-1 md:space-x-2"
           >
-            <Zap className="h-4 w-4" />
-            <span>Choc Septique</span>
+            <Zap className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
+            <span className="text-xs md:text-sm">Choc Septique</span>
           </button>
           <button
             onClick={() => loadPatientData('survivorPatient')}
-            className="px-4 py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-800 rounded-lg font-medium hover:from-green-200 hover:to-green-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-3 py-2 md:px-4 md:py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-800 rounded-lg font-medium hover:from-green-200 hover:to-green-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-1 md:space-x-2"
           >
-            <Target className="h-4 w-4" />
-            <span>Survivant</span>
+            <Target className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
+            <span className="text-xs md:text-sm">Survivant</span>
           </button>
           <button
             onClick={() => loadPatientData('mixedProfilePatient')}
-            className="px-4 py-3 bg-gradient-to-r from-yellow-100 to-yellow-200 text-yellow-800 rounded-lg font-medium hover:from-yellow-200 hover:to-yellow-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-3 py-2 md:px-4 md:py-3 bg-gradient-to-r from-yellow-100 to-yellow-200 text-yellow-800 rounded-lg font-medium hover:from-yellow-200 hover:to-yellow-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-1 md:space-x-2"
           >
-            <RotateCcw className="h-4 w-4" />
-            <span>Profil Mixte</span>
+            <RotateCcw className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
+            <span className="text-xs md:text-sm">Profil Mixte</span>
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
         {/* Form */}
-        <div className="xl:col-span-2">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="xl:col-span-1">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             {/* Biomarkers Form */}
             <div className="card shadow-lg border-l-4 border-medical-500">
               <BiomarkersForm
