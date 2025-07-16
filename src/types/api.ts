@@ -33,8 +33,8 @@ export interface PatientData {
   clinical_texts?: ClinicalTexts;
 }
 
-export type RiskLevel = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
-export type Prediction = 'DEATH' | 'SURVIVAL';
+export type RiskLevel = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL' | 'CRITIQUE';
+export type Prediction = 'DEATH' | 'SURVIVAL' | 'Died' | 'Survived';
 
 export interface MortalityPredictionResponse {
   prediction: Prediction;
@@ -44,7 +44,9 @@ export interface MortalityPredictionResponse {
   risk_factors: string[];
   recommendations: string[];
   patient_id: string;
-  processing_time: number;
+  confidence?: number;
+  timestamp?: string;
+  processing_time?: number;
 }
 
 export interface MortalitySimpleResponse {

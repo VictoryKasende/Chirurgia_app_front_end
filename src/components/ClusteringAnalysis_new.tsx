@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Users, Clock, AlertCircle, TrendingUp, Shield, Eye, AlertTriangle, CheckCircle2, Zap, Target, RotateCcw } from 'lucide-react';
+import { Users, Clock, AlertCircle, TrendingUp, Shield, Eye } from 'lucide-react';
 import { chirurgiaApi } from '../services/api';
 import type { Biomarkers, ClinicalTexts, ClusteringResponse } from '../types/api';
 import BiomarkersForm from './BiomarkersForm';
@@ -118,38 +118,33 @@ const ClusteringAnalysis = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           <button
             onClick={() => loadPatientData('criticalPatient')}
-            className="px-4 py-3 bg-gradient-to-r from-red-100 to-red-200 text-red-800 rounded-lg font-medium hover:from-red-200 hover:to-red-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-4 py-3 bg-gradient-to-r from-red-100 to-red-200 text-red-800 rounded-lg font-medium hover:from-red-200 hover:to-red-300 transition-all duration-200 shadow-sm"
           >
-            <AlertTriangle className="h-4 w-4" />
-            <span>Patient Critique</span>
+            🚨 Patient Critique
           </button>
           <button
             onClick={() => loadPatientData('stablePatient')}
-            className="px-4 py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-800 rounded-lg font-medium hover:from-green-200 hover:to-green-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-4 py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-800 rounded-lg font-medium hover:from-green-200 hover:to-green-300 transition-all duration-200 shadow-sm"
           >
-            <CheckCircle2 className="h-4 w-4" />
-            <span>Patient Stable</span>
+            ✅ Patient Stable
           </button>
           <button
             onClick={() => loadPatientData('septicShockPatient')}
-            className="px-4 py-3 bg-gradient-to-r from-red-100 to-red-200 text-red-800 rounded-lg font-medium hover:from-red-200 hover:to-red-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-4 py-3 bg-gradient-to-r from-red-100 to-red-200 text-red-800 rounded-lg font-medium hover:from-red-200 hover:to-red-300 transition-all duration-200 shadow-sm"
           >
-            <Zap className="h-4 w-4" />
-            <span>Choc Septique</span>
+            ⚡ Choc Septique
           </button>
           <button
             onClick={() => loadPatientData('survivorPatient')}
-            className="px-4 py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-800 rounded-lg font-medium hover:from-green-200 hover:to-green-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-4 py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-800 rounded-lg font-medium hover:from-green-200 hover:to-green-300 transition-all duration-200 shadow-sm"
           >
-            <Target className="h-4 w-4" />
-            <span>Survivant</span>
+            🎯 Survivant
           </button>
           <button
             onClick={() => loadPatientData('mixedProfilePatient')}
-            className="px-4 py-3 bg-gradient-to-r from-yellow-100 to-yellow-200 text-yellow-800 rounded-lg font-medium hover:from-yellow-200 hover:to-yellow-300 transition-all duration-200 shadow-sm flex items-center justify-center space-x-2"
+            className="px-4 py-3 bg-gradient-to-r from-yellow-100 to-yellow-200 text-yellow-800 rounded-lg font-medium hover:from-yellow-200 hover:to-yellow-300 transition-all duration-200 shadow-sm"
           >
-            <RotateCcw className="h-4 w-4" />
-            <span>Profil Mixte</span>
+            🔄 Profil Mixte
           </button>
         </div>
       </div>

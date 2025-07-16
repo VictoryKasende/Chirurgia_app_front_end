@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Heart, Activity, Users, Clock, TrendingUp, AlertTriangle } from 'lucide-react';
+import { 
+  Heart, Users, TrendingUp, AlertTriangle, 
+  Brain, Stethoscope, BarChart3, Shield, CheckCircle2,
+  Timer
+} from 'lucide-react';
 
 interface DashboardStats {
   totalPredictions: number;
@@ -90,11 +94,22 @@ const Dashboard = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">Tableau de Bord ChirurgIA</h1>
-        <p className="text-gray-600">
-          Vue d'ensemble de l'activité de prédiction et d'analyse
-        </p>
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900 flex items-center">
+            <Stethoscope className="h-8 w-8 text-blue-600 mr-3" />
+            Tableau de Bord ChirurgIA
+          </h1>
+          <p className="text-gray-600 mt-1">
+            Système intelligent de prédiction de mortalité en chirurgie
+          </p>
+        </div>
+        <div className="flex items-center space-x-2">
+          <div className="flex items-center text-sm text-green-600">
+            <CheckCircle2 className="h-4 w-4 mr-1" />
+            Système opérationnel
+          </div>
+        </div>
       </div>
 
       {/* Statistics Cards */}
@@ -102,8 +117,8 @@ const Dashboard = () => {
         <StatCard
           title="Total Prédictions"
           value={stats.totalPredictions.toLocaleString()}
-          icon={Activity}
-          color="bg-medical-600"
+          icon={Brain}
+          color="bg-blue-600"
         />
         <StatCard
           title="Patients à Haut Risque"
@@ -114,8 +129,8 @@ const Dashboard = () => {
         <StatCard
           title="Temps Moyen"
           value={`${stats.averageProcessingTime}s`}
-          icon={Clock}
-          color="bg-blue-600"
+          icon={Timer}
+          color="bg-purple-600"
         />
         <StatCard
           title="Taux de Réussite"
@@ -134,12 +149,12 @@ const Dashboard = () => {
               Actions Rapides
             </h3>
             <div className="space-y-3">
-              <button className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-medical-600 hover:bg-medical-700 transition-colors">
+              <button className="w-full flex items-center justify-center px-4 py-3 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors">
                 <Heart className="h-4 w-4 mr-2" />
                 Nouvelle Prédiction
               </button>
               <button className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">
-                <Activity className="h-4 w-4 mr-2" />
+                <BarChart3 className="h-4 w-4 mr-2" />
                 Analyse Complète
               </button>
               <button className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">
@@ -164,7 +179,9 @@ const Dashboard = () => {
                 >
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <Activity className="h-5 w-5 text-gray-400" />
+                      {analysis.type === 'Mortalité' && <Heart className="h-5 w-5 text-red-500" />}
+                      {analysis.type === 'Clustering' && <Users className="h-5 w-5 text-blue-500" />}
+                      {analysis.type === 'Analyse Complète' && <BarChart3 className="h-5 w-5 text-purple-500" />}
                     </div>
                     <div className="ml-3">
                       <p className="text-sm font-medium text-gray-900">
@@ -196,15 +213,24 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="flex items-center">
             <div className="h-3 w-3 bg-green-400 rounded-full mr-3"></div>
-            <span className="text-sm text-gray-600">API ChirurgIA</span>
+            <span className="text-sm text-gray-600 flex items-center">
+              <Stethoscope className="h-4 w-4 mr-1" />
+              API ChirurgIA
+            </span>
           </div>
           <div className="flex items-center">
             <div className="h-3 w-3 bg-green-400 rounded-full mr-3"></div>
-            <span className="text-sm text-gray-600">Base de Données</span>
+            <span className="text-sm text-gray-600 flex items-center">
+              <Shield className="h-4 w-4 mr-1" />
+              Base de Données
+            </span>
           </div>
           <div className="flex items-center">
             <div className="h-3 w-3 bg-green-400 rounded-full mr-3"></div>
-            <span className="text-sm text-gray-600">Modèles ML</span>
+            <span className="text-sm text-gray-600 flex items-center">
+              <Brain className="h-4 w-4 mr-1" />
+              Modèles ML
+            </span>
           </div>
         </div>
       </div>

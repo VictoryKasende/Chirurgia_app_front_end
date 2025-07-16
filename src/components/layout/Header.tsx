@@ -20,7 +20,7 @@ const Header = ({ currentPage, onPageChange }: HeaderProps) => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <Heart className="h-8 w-8 text-medical-600" />
+              <Heart className="h-8 w-8 text-blue-600" />
               <h1 className="ml-2 text-xl font-bold text-gray-900">
                 ChirurgIA
               </h1>
@@ -37,7 +37,7 @@ const Header = ({ currentPage, onPageChange }: HeaderProps) => {
                   onClick={() => onPageChange(item.id)}
                   className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     currentPage === item.id
-                      ? 'text-medical-600 bg-medical-50'
+                      ? 'text-blue-600 bg-blue-50'
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
                   }`}
                 >
@@ -69,7 +69,7 @@ const Header = ({ currentPage, onPageChange }: HeaderProps) => {
                 onClick={() => onPageChange(item.id)}
                 className={`flex items-center w-full px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   currentPage === item.id
-                    ? 'text-medical-600 bg-medical-50'
+                    ? 'text-blue-600 bg-blue-50'
                     : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
                 }`}
               >
